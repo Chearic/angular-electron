@@ -6,10 +6,18 @@
     "electron": "ng build --base-href ./ && electron .",
     "ng": "ng",
     "start": "ng serve",
+    "start:electron": "electron .",
     "build": "ng build",
+    "electron-package": "ng build --prod && electron-packager . --platform=win32 --no-prune --ignore=/node_modules --ignore=/src --ignore=/e2e --overwrite",
+    "build:electron": "ng build --prod && electron-builder --win",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "build": {
+    "directories": {
+      "output": "release"
+    }
   },
   "private": true,
   "dependencies": {
@@ -35,7 +43,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
-    "electron": "^5.0.1",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0",
+    "electron-packager": "^13.1.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",

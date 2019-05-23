@@ -15,7 +15,8 @@ function createWindow() {
       slashes: true
     })
   );
-
+  
+  win.webContents.openDevTools();
   // The following is optional and will open the DevTools:
   // win.webContents.openDevTools()
 
